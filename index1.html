@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanane Boulaghmane — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- ICI : Modification pour cibler style1.css -->
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">HB.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-circle c1"></div>
+      <div class="hero-circle c2"></div>
+      <div class="hero-circle c3"></div>
+    </div>
+    <div class="hero-content fade-in">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Hanane<br /><em>Boulaghmane</em></h1>
+      <p class="hero-role">Engineering Student · Cloud & IoT</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">01 — About</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar reveal">
+          <div class="avatar-box">
+            <div class="avatar-initials">HB</div>
+          </div>
+          <div class="avatar-deco"></div>
+        </div>
+        <div class="about-text reveal">
+          <p class="about-lead">Étudiante Ingénieure à l'INPT, filière Cloud & IoT, passionnée par le développement web et les systèmes distribués.</p>
+          <p class="about-body">Alliant la rigueur des classes préparatoires MP à une expertise certifiée Oracle Cloud (OCI), je construis des interfaces modernes et performantes. Certifiée <strong>Oracle Cloud Infrastructure AI & Foundations 2025</strong>, je cherche à allier technologie et design pour créer des expériences utilisateur mémorables.</p>
+          <div class="skills-grid">
+            <div class="skill-tag">HTML5 / CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">React</div>
+            <div class="skill-tag">Node.js</div>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">Java / C++</div>
+            <div class="skill-tag">Oracle Cloud (OCI)</div>
+            <div class="skill-tag">Git & GitHub</div>
+            <div class="skill-tag">MySQL</div>
+            <div class="skill-tag">Linux</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">02 — Projects</span>
+        <h2 class="section-title">My Work</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-icon">🌐</div>
+          <div class="project-info">
+            <h3 class="project-title">Site Web Club FGE · INPT</h3>
+            <p class="project-desc">Site officiel du club FGE présentant le Forum GENI Entreprises. Système d'inscription multi-étapes, upload de documents, animations canvas interactives et interface responsive dark prestige.</p>
+            <div class="project-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap 5</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon">📚</div>
+          <div class="project-info">
+            <h3 class="project-title">WeCoLearn — Co-learning Platform</h3>
+            <p class="project-desc">Plateforme éducative collaborative avec tableau blanc interactif (Canvas API), rooms thématiques et visioconférence (MediaStream API). Projet PPP en groupe de 3.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>Canvas API</span><span>MediaStream API</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon">🧮</div>
+          <div class="project-info">
+            <h3 class="project-title">Calculator App</h3>
+            <p class="project-desc">Calculatrice professionnelle avec toutes les opérations arithmétiques, support clavier, historique des calculs et interface soignée.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://hanane-boulaghmane.github.io/codealpha_tasks/task2_calculator/" target="_blank" class="project-btn">Live Demo</a>
+            <a href="https://github.com/hanane-boulaghmane/codealpha_tasks/tree/main/task2_calculator" target="_blank" class="project-btn outline">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon">🎵</div>
+          <div class="project-info">
+            <h3 class="project-title">Music Player</h3>
+            <p class="project-desc">Lecteur musical avec playlist, contrôles play/pause/suivant/précédent, barre de progression, contrôle du volume et mode shuffle/repeat.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://hanane-boulaghmane.github.io/codealpha_tasks/task4_music_player/" target="_blank" class="project-btn">Live Demo</a>
+            <a href="https://github.com/hanane-boulaghmane/codealpha_tasks/tree/main/task4_music_player" target="_blank" class="project-btn outline">Code</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon">🌊</div>
+          <div class="project-info">
+            <h3 class="project-title">Optimisation SEAREV</h3>
+            <p class="project-desc">Projet TIPE — Étude approfondie et modélisation énergétique du système de conversion d'énergie des vagues SEAREV.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Modélisation</span><span>Énergie</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-icon">🖼️</div>
+          <div class="project-info">
+            <h3 class="project-title">Image Gallery</h3>
+            <p class="project-desc">Galerie d'images responsive avec vue lightbox, effets hover, filtres par catégorie et transitions fluides.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://hanane-boulaghmane.github.io/codealpha_tasks/task1_image_gallery/" target="_blank" class="project-btn">Live Demo</a>
+            <a href="https://github.com/hanane-boulaghmane/codealpha_tasks" target="_blank" class="project-btn outline">Code</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESUME ========== -->
+  <section class="section" id="resume">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">03 — Resume</span>
+        <h2 class="section-title">My Journey</h2>
+      </div>
+      <div class="resume-grid">
+
+        <!-- Education -->
+        <div class="resume-col reveal">
+          <h3 class="resume-col-title"><span class="resume-icon">🎓</span> Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2025 — 2028</span>
+                <h4>Cycle Ingénieur · Cloud & IoT</h4>
+                <p>INPT, Rabat — Systèmes Distribués & Ubiquitaires. Modules : Réseaux, Algorithmique, Systèmes distribués.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2023 — 2025</span>
+                <h4>CPGE · Mathématiques et Physique (MP)</h4>
+                <p>Lycée Ibn Timiya, Marrakech — Formation intensive aux sciences de l'ingénieur.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2021 — 2023</span>
+                <h4>Baccalauréat Sciences Mathématiques A</h4>
+                <p>Lycée Abtih, Ait Ourir.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience & Certifications -->
+        <div class="resume-col reveal">
+          <h3 class="resume-col-title"><span class="resume-icon">💼</span> Experience & Certifications</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2025 — En cours</span>
+                <h4>Frontend Intern · CodeAlpha</h4>
+                <p>Développement de projets web réels : Image Gallery, Calculator, Music Player, Portfolio.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">Oct. 2025 — En cours</span>
+                <h4>Cellule DevOps · Club CIT · INPT</h4>
+                <p>Participation aux activités techniques de la cellule DevOps.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">Nov. 2025</span>
+                <h4>🏅 Oracle Cloud Infrastructure 2025</h4>
+                <p>Certified AI Foundations Associate & Certified Foundations Associate.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">Oct. 2025</span>
+                <h4>Bénévolat · Forum GENI ENTREPRISES</h4>
+                <p>Staff membre — prospection et gestion de la relation avec Orange.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Download CV -->
+      <div class="resume-download reveal">
+        <a href="CV.pdf" class="btn btn-primary" download>Download CV</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">04 — Contact</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <p class="contact-lead">Actuellement à la recherche d'un stage PFA. Ouverte aux collaborations, projets freelance et opportunités tech !</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>Rabat, Maroc</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <span>hananboulaghmane0@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span>+212 7 72 87 89 14</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">💻</span>
+              <a href="https://github.com/hanane-boulaghmane" target="_blank">github.com/hanane-boulaghmane</a>
+            </div>
+          </div>
+          <!-- Languages -->
+          <div class="lang-section">
+            <h4 class="lang-title">Languages</h4>
+            <div class="lang-list">
+              <div class="lang-item"><span>🇲🇦 Arabe</span><span class="lang-level">Maternel</span></div>
+              <div class="lang-item"><span>🇫🇷 Français</span><span class="lang-level">Courant</span></div>
+              <div class="lang-item"><span>🇬🇧 Anglais</span><span class="lang-level">Professionnel</span></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+          <p class="form-success" id="formSuccess">✅ Message sent successfully!</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2025 Hanane Boulaghmane · INPT · Cloud & IoT</p>
+      <div class="footer-links">
+        <a href="https://github.com/hanane-boulaghmane" target="_blank">GitHub</a>
+        <a href="mailto:hananboulaghmane0@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ICI : Modification pour cibler script1.js -->
+  <script src="script1.js"></script>
+</body>
+</html>
