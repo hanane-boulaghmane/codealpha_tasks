@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="player-wrapper">
+
+      <!-- Playlist -->
+      <aside class="playlist">
+        <h2 class="playlist-title">Playlist</h2>
+        <ul class="playlist-list" id="playlistList"></ul>
+      </aside>
+
+      <!-- Main Player Card -->
+      <div class="player-card">
+
+        <!-- Album Art -->
+        <div class="art-container">
+          <div class="art" id="albumArt">
+            <div class="art-icon" id="artIcon">♪</div>
+          </div>
+          <div class="art-ring"></div>
+        </div>
+
+        <!-- Song Info -->
+        <div class="song-info">
+          <p class="song-artist" id="songArtist">Artist</p>
+          <h1 class="song-title"  id="songTitle">Select a song</h1>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-section">
+          <div class="progress-bar-track" id="progressTrack">
+            <div class="progress-bar-fill" id="progressFill"></div>
+            <div class="progress-thumb"    id="progressThumb"></div>
+          </div>
+          <div class="time-row">
+            <span class="time" id="currentTime">0:00</span>
+            <span class="time" id="duration">0:00</span>
+          </div>
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-section">
+          <span class="vol-icon" id="volIcon">🔈</span>
+          <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="80" />
+          <span class="vol-label" id="volLabel">80%</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <button class="ctrl-btn secondary" id="btnShuffle" title="Shuffle">⇄</button>
+          <button class="ctrl-btn"           id="btnPrev"    title="Previous">⏮</button>
+          <button class="ctrl-btn play"      id="btnPlay"    title="Play/Pause">▶</button>
+          <button class="ctrl-btn"           id="btnNext"    title="Next">⏭</button>
+          <button class="ctrl-btn secondary" id="btnRepeat"  title="Repeat">↻</button>
+        </div>
+
+      </div><!-- /player-card -->
+    </div><!-- /player-wrapper -->
+  </div><!-- /app -->
+
+  <!-- Hidden audio element -->
+  <audio id="audioEl"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
