@@ -1,0 +1,316 @@
+/* ============================
+   CSS RESET & ROOT VARIABLES
+   ============================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:           #0e0e10;
+  --surface:      #1a1a1e;
+  --surface2:     #242428;
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --text:         #f0f0f0;
+  --text-muted:   #6b6b78;
+  --accent:       #c8f135;
+  --accent-dark:  #a8d01a;
+  --danger:       #ff5f5f;
+  --num-bg:       #1e1e22;
+  --num-hover:    #2a2a30;
+  --op-bg:        #222228;
+  --op-text:      #c8f135;
+  --eq-bg:        #c8f135;
+  --eq-text:      #0e0e10;
+  --shadow:       0 24px 80px rgba(0, 0, 0, 0.6);
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+
+/* ============================
+   BODY & LAYOUT
+   ============================ */
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  padding: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.kbd-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+
+/* ============================
+   CALCULATOR SHELL
+   ============================ */
+.calc {
+  width: 340px;
+  background: var(--surface);
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  user-select: none;
+}
+
+
+/* ============================
+   DISPLAY
+   ============================ */
+.display {
+  padding: 28px 28px 20px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 6px;
+  position: relative;
+}
+
+.display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 241, 53, 0.15), transparent);
+}
+
+.expression {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  min-height: 18px;
+  text-align: right;
+  word-break: break-all;
+  transition: color 0.2s;
+}
+
+.main-display {
+  font-family: var(--font-mono);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--text);
+  text-align: right;
+  word-break: break-all;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: font-size 0.15s ease, color 0.2s;
+}
+
+/* Dynamic font size classes added by JS */
+.main-display.small  { font-size: 32px; }
+.main-display.xsmall { font-size: 22px; }
+
+/* Flash accent color on result */
+.main-display.accent { color: var(--accent); }
+
+
+/* ============================
+   HISTORY
+   ============================ */
+.history-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--surface);
+}
+
+.history-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.toggle-history {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  transition: color 0.15s;
+  padding: 0;
+}
+
+.toggle-history:hover { color: var(--accent); }
+
+.history-list {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background: var(--surface);
+  transition: max-height 0.3s ease;
+}
+
+.history-list.open {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-bottom: 12px;
+}
+
+.history-entry {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.history-entry:last-child { border-bottom: none; }
+.history-entry:hover      { color: var(--accent); }
+
+.history-entry span { color: var(--text); }
+
+.history-empty {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px 0;
+}
+
+
+/* ============================
+   KEYPAD GRID
+   ============================ */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+
+/* ============================
+   BUTTONS — BASE
+   ============================ */
+.btn {
+  background: var(--num-bg);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s, transform 0.08s;
+  outline: none;
+  position: relative;
+}
+
+.btn:hover  { background: var(--num-hover); }
+.btn:active { transform: scale(0.93); }
+
+
+/* ============================
+   BUTTONS — VARIANTS
+   ============================ */
+
+/* Operator buttons  ÷ × − + */
+.btn.op {
+  background: var(--op-bg);
+  color: var(--op-text);
+  font-size: 20px;
+}
+.btn.op:hover { background: #2c2c34; }
+
+/* Function buttons  +/− % */
+.btn.fn {
+  background: var(--surface2);
+  color: var(--text-muted);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.btn.fn:hover { background: #2e2e34; color: var(--text); }
+
+/* Clear button  AC */
+.btn.clear {
+  background: var(--surface2);
+  color: var(--danger);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.btn.clear:hover { background: rgba(255, 95, 95, 0.12); }
+
+/* Equals button  = */
+.btn.eq {
+  background: var(--eq-bg);
+  color: var(--eq-text);
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom-right-radius: 27px;
+}
+.btn.eq:hover  { background: var(--accent-dark); }
+.btn.eq:active { transform: scale(0.92); }
+
+/* Zero button — spans 2 columns */
+.btn.zero {
+  grid-column: span 2;
+  justify-content: flex-start;
+  padding-left: 28px;
+  border-bottom-left-radius: 27px;
+}
+
+/* Dot button */
+.btn.dot { font-size: 22px; font-weight: 700; }
+
+
+/* ============================
+   SCROLLBAR
+   ============================ */
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 2px; }
+
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 400px) {
+  .calc { width: 100%; max-width: 340px; }
+  body  { padding: 1rem; }
+}
